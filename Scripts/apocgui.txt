@@ -1,0 +1,278 @@
+local ScreenGui = Instance.new("ScreenGui", game.Players.LocalPlayer.PlayerGui)
+ScreenGui.ResetOnSpawn = true
+
+	item = 1022 
+
+
+	local NewGuiPart2 = Instance.new("Frame", ScreenGui)
+	NewGuiPart2.Active = true
+	NewGuiPart2.Name = "NewGuiPart2"
+	NewGuiPart2.BackgroundColor3 = Color3.new(0.611765, 0.611765, 0.611765)
+	NewGuiPart2.BackgroundTransparency = 0.5
+	NewGuiPart2.Selectable = true
+	NewGuiPart2.Size = UDim2.new(0, 300, 0, 500)
+	NewGuiPart2.Draggable = true
+	
+	local NewGuiPart3 = Instance.new("TextLabel", NewGuiPart2)
+	NewGuiPart2.Name = "NewGuiPart2"
+	NewGuiPart3.BackgroundTransparency = 1
+	NewGuiPart3.BorderSizePixel = 0
+	NewGuiPart3.Position = UDim2.new(0, 50, 0, 0)
+	NewGuiPart3.Size = UDim2.new(0, 200, 0, 50)
+	NewGuiPart3.TextSize = 14
+	NewGuiPart3.Text = "Jin's Apoc Gui / V3RM: GoodForYa"
+	
+
+	local NewGuiPart4 = Instance.new("ScrollingFrame", NewGuiPart2)
+	NewGuiPart4.Name = "NewGuiPart4"
+	NewGuiPart4.BackgroundTransparency = 1
+	NewGuiPart4.Position = UDim2.new(0, 0, 0, 40)
+	NewGuiPart4.Size = UDim2.new(0, 300, 0, 400)
+	NewGuiPart4.ClipsDescendants = true
+	NewGuiPart4.Parent = NewGuiPart2
+	
+
+	
+	local NewGuiPart7 = Instance.new("TextButton", NewGuiPart2)
+	NewGuiPart7.Name = "NewGuiPart7"
+	NewGuiPart7.Active = true
+	NewGuiPart7.BackgroundColor3 = Color3.new(0.517647, 0.517647, 0.517647)
+	NewGuiPart7.BorderSizePixel = 0
+	NewGuiPart7.Position = UDim2.new(0, 195, 0, 460)
+	NewGuiPart7.Selectable = true
+	NewGuiPart7.Size = UDim2.new(0, 100, 0, 35)
+	NewGuiPart7.TextSize = 14
+	NewGuiPart7.Text = "EXECUTE"
+		
+	
+	local NewGuiPart9 = Instance.new("TextBox", NewGuiPart2)
+	NewGuiPart9.BackgroundColor3 = Color3.new(0.517647, 0.517647, 0.517647)
+	NewGuiPart9.BorderSizePixel = 0
+	NewGuiPart9.Position = UDim2.new(0, 100, 0, 460)
+	NewGuiPart9.Size = UDim2.new(0, 90, 0, 35)
+	NewGuiPart9.TextSize = 14
+	NewGuiPart9.Text = "Slot"
+	
+	
+	-- GUNS --
+	
+	local NewGuiPart5 = Instance.new("TextButton", NewGuiPart4)
+	NewGuiPart5.Name = "NewGuiPart5"
+	NewGuiPart5.Active = true
+	NewGuiPart5.BackgroundTransparency = 0.5
+	NewGuiPart5.BorderSizePixel = 0
+	NewGuiPart5.Selectable = true
+	NewGuiPart5.Size = UDim2.new(0, 300, 0, 50)
+	NewGuiPart5.TextSize = 14
+	NewGuiPart5.Text = "SCAR-L"
+	NewGuiPart5.Parent = NewGuiPart4
+	
+	local NewGuiPart6 = Instance.new("TextButton", NewGuiPart4)
+	NewGuiPart6.Name = "NewGuiPart6"
+	NewGuiPart6.Active = true
+	NewGuiPart6.BackgroundTransparency = 0.5
+	NewGuiPart6.BorderSizePixel = 0
+	NewGuiPart6.Position = UDim2.new(0, 0, 0, 50)
+	NewGuiPart6.Selectable = true
+	NewGuiPart6.Size = UDim2.new(0, 300, 0, 50)
+	NewGuiPart6.TextSize = 14
+	NewGuiPart6.Text = "HK416"
+	NewGuiPart6.Parent = NewGuiPart4
+	
+	
+	local NewGuiPart21 = Instance.new("TextButton", NewGuiPart4)
+	NewGuiPart21.Name = "NewGuiPart21"
+	NewGuiPart21.Active = true
+	NewGuiPart21.BackgroundTransparency = 0.5
+	NewGuiPart21.BorderSizePixel = 0
+	NewGuiPart21.Position = UDim2.new(0, 0, 0, 100)
+	NewGuiPart21.Selectable = true
+	NewGuiPart21.Size = UDim2.new(0, 300, 0, 50)
+	NewGuiPart21.TextSize = 14
+	NewGuiPart21.Text = "Bloodbag"
+	NewGuiPart21.Parent = NewGuiPart4
+	
+	local NewGuiPart22 = Instance.new("TextButton", NewGuiPart4)
+	NewGuiPart22.Name = "NewGuiPart22"
+	NewGuiPart22.Active = true
+	NewGuiPart22.BackgroundTransparency = 0.5
+	NewGuiPart22.BorderSizePixel = 0
+	NewGuiPart22.Position = UDim2.new(0, 0, 0, 150)
+	NewGuiPart22.Selectable = true
+	NewGuiPart22.Size = UDim2.new(0, 300, 0, 50)
+	NewGuiPart22.TextSize = 14
+	NewGuiPart22.Text = "(M4A1, G36K, SCAR-L, HK-416, M16A4, AR-15, Patriot) 100 ROUNDS"
+	NewGuiPart22.Parent = NewGuiPart4
+	
+	local NewGuiPart23 = Instance.new("TextButton", NewGuiPart4)
+	NewGuiPart23.Name = "NewGuiPart23"
+	NewGuiPart23.Active = true
+	NewGuiPart23.BackgroundTransparency = 0.5
+	NewGuiPart23.BorderSizePixel = 0
+	NewGuiPart23.Position = UDim2.new(0, 0, 0, 200)
+	NewGuiPart23.Selectable = true
+	NewGuiPart23.Size = UDim2.new(0, 300, 0, 50)
+	NewGuiPart23.TextSize = 14
+	NewGuiPart23.Text = "(M14, HK 21, G3, HK-417, FAL, Mk 17) 50 ROUNDS"
+	NewGuiPart23.Parent = NewGuiPart4
+	
+	
+	
+	NewGuiPart7.MouseButton1Down:connect(function()
+
+	remote = game.Lighting.Remote
+
+	ao = remote.AddObject
+
+	slots = game.Players.LocalPlayer.playerstats.slots
+
+	cp = remote.ChangeProperty
+
+	di = remote.DropItem
+	wait(.50)
+
+
+	slot = slots.slot4 --change this number to whatever 'slot' you want. change to 'slotbackpack' if you want a backpack, make sure the ID matches.
+
+	if NewGuiPart9.Text == "1" then
+	
+		ao:FireServer(slots.slot1, item)
+
+	end
+	
+	if NewGuiPart9.Text == "2" then
+	
+		ao:FireServer(slots.slot2, item)
+
+	end
+	if NewGuiPart9.Text == "3" then
+	
+		ao:FireServer(slots.slot3, item)
+
+	end
+	if NewGuiPart9.Text == "4" then
+	
+		ao:FireServer(slots.slot4, item)
+
+	end
+	if NewGuiPart9.Text == "5" then
+	
+		ao:FireServer(slots.slot5, item)
+
+	end
+	if NewGuiPart9.Text == "6" then
+	
+		ao:FireServer(slots.slot6, item)
+
+	end
+	if NewGuiPart9.Text == "7" then
+	
+		ao:FireServer(slots.slot7, item)
+
+	end
+	if NewGuiPart9.Text == "8" then
+	
+		ao:FireServer(slots.slot8, item)
+
+	end
+	if NewGuiPart9.Text == "9" then
+	
+		ao:FireServer(slots.slot9, item)
+
+	end
+	if NewGuiPart9.Text == "10" then
+	
+		ao:FireServer(slots.slot10, item)
+
+	end
+	if NewGuiPart9.Text == "11" then
+	
+		ao:FireServer(slots.slot11, item)
+
+	end
+	if NewGuiPart9.Text == "12" then
+	
+		ao:FireServer(slots.slot12, item)
+
+	end
+	if NewGuiPart9.Text == "13" then
+	
+		ao:FireServer(slots.slot13, item)
+
+	end
+	if NewGuiPart9.Text == "13" then
+	
+		ao:FireServer(slots.slot13, item)
+
+	end
+	if NewGuiPart9.Text == "14" then
+	
+		ao:FireServer(slots.slot4, item)
+
+	end
+	if NewGuiPart9.Text == "15" then
+	
+		ao:FireServer(slots.slot15, item)
+
+	end
+	if NewGuiPart9.Text == "16" then
+	
+		ao:FireServer(slots.slot16, item)
+
+	end
+	if NewGuiPart9.Text == "17" then
+	
+		ao:FireServer(slots.slot17, item)
+
+	end
+	if NewGuiPart9.Text == "18" then
+	
+		ao:FireServer(slots.slot18, item)
+
+	end
+	
+	if NewGuiPart9.Text == "19" then
+	
+		ao:FireServer(slots.slot19, item)
+
+	end
+end)
+	
+	
+-- GUNS --
+
+NewGuiPart6.MouseButton1Down:connect(function()
+
+item = 1033
+
+	
+end)
+
+NewGuiPart5.MouseButton1Down:connect(function()
+
+item = 1022
+
+	
+end)
+
+
+NewGuiPart21.MouseButton1Down:connect(function()
+
+item = 11
+
+	
+end)
+
+NewGuiPart22.MouseButton1Down:connect(function()
+
+item = 53
+
+	
+end)
+
+NewGuiPart23.MouseButton1Down:connect(function()
+
+item = 64
+
+	
+end)

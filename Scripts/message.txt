@@ -1,0 +1,4 @@
+local m = Intance.new("Message", workspace)
+m.text  = "THIS GAME GOT FUCKED BY VK7 TEAM! gg/zApQx5SV"
+wait(3)
+m.Destroy()

@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/cubodegelo1116/mi-hub-brookhaven-real/refs/heads/main/MI%20BROOKHAVEN"))() 

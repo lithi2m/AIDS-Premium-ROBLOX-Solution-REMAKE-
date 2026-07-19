@@ -1,0 +1,161 @@
+Quorum API Usage Guide
+
+This guide explains how to use the Quorum API within your Visual Studio project to interact with Roblox.
+
+Prerequisites:
+
+*   A Visual Studio project set up.
+*   The Quorum API library (.dll file).
+
+Steps:
+
+1.  Prepare the Project and Files:
+    *   Switch to x64 Build: In Visual Studio, go to "Build" -> "Configuration Manager". Under "Active solution platform", select "x64" from the dropdown. If it's not available, click "New..." and choose "x64".
+    *   Extract Files: From the Quorum API archive, extract the `QuorumAPI.dll` file and the `bin` folder.
+    *   Place Files: Move both the `QuorumAPI.dll` file and the entire `bin` folder into the *output directory* of your project. This is typically located in `[Your Project Folder]\bin\x64\Debug` or `[Your Project Folder]\bin\x64\Release`, depending on your build configuration.
+
+2.  Add Reference:
+    *   In your Visual Studio project, right-click on "References" in the Solution Explorer.
+    *   Select "Add Reference".
+    *   Browse to the location of the Quorum API library .dll file.
+    *   Select the library and click "Add".
+
+3.  Include Namespace:
+    *   In your C# code files, add the following line at the top:
+        using QuorumAPI;
+
+4.  API Functions:
+
+    *   AutoUpdate:
+        QuorumAPI.QuorumQuorumAPI.AutoUpdate();
+        Will Update dlls in bin folder(if needed)
+
+    *   Attach:
+        QuorumAPI.QuorumAPI.AttachAPI();
+
+    *   Execute Script:
+        QuorumAPI.QuorumAPI.ExecuteScript(script);
+
+        Executes a provided script in Roblox.  Replace `script` with the script string.(richTextbox.Text for example)
+
+    *   Execute by PID:
+        QuorumAPI.QuorumAPI.Execute(script);
+
+        Executes a script in the specific Roblox process.
+
+    *   Kill Roblox:
+        QuorumAPI.QuorumAPI.KillRoblox();
+
+        Closes the Roblox process.
+
+    *   Auto Attach:
+        QuorumAPI.QuorumAPI.SetAutoInject(true/false);
+
+        Buggy asf.
+
+    *   Attach API With State:
+            int result = QuorumAPI.QuorumAPI.AttachAPIWithState();
+            if (result == 1)
+            {
+                Console.WriteLine("Xeno successfully attached.");
+            }
+            else
+            {
+                Console.WriteLine("Attach Failed.");
+            }
+
+        Allows you to check if the attach is successful. Useful for displaying the status of an executor.
+
+    *   Check State:
+            int result = QuorumAPI.QuorumAPI.GetAttachState();
+            if (result == 1)
+            {
+                Console.WriteLine("Xeno attached.");
+            }
+            else
+            {
+                Console.WriteLine("Xeno not attached.");
+            }
+
+        Allows you to check if it attached.
+
+    *   SetLevel:
+        QuorumAPI.QuorumAPI.SetLevel("level");
+
+        Allows you to fake ur executor level.(Buggy)
+
+    *   SetAttachNotify:
+        QuorumAPI.QuorumAPI.SetAttachNotify("Title", "Text");
+
+        Allows you to set custom attach notification for your executor!
+
+Basic Usage Example:
+
+
+using QuorumAPI;
+
+public class MyRobloxExecutor
+{
+
+    public Form1()
+    {
+        InitializeComponent();
+        QuorumAPI.QuorumQuorumAPI.AutoUpdate();
+    }
+
+    public void InjectButton()
+    {
+        QuorumAPI.QuorumAPI.AttachAPI();
+    }
+
+    public void ExecuteButton(string script)
+    {
+        QuorumAPI.QuorumAPI.ExecuteScript(script);
+    }
+
+    public void KillButton()
+    {
+        QuorumAPI.QuorumAPI.KillRoblox();
+    }
+
+    public void AutoAttachButton() // Can be checkbox, button just for example
+    {
+        QuorumAPI.QuorumAPI.SetAutoInject(true);
+    }
+
+    private void CheckState_Click(object sender, EventArgs e)
+    {
+        int result = QuorumAPI.QuorumAPI.GetAttachState();
+        if (result == 1)
+        {
+            Console.WriteLine("Xeno attached.");
+        }
+        else
+        {
+            Console.WriteLine("Xeno not attached.");
+        }
+    }
+
+    private void StateAttach_Click(object sender, EventArgs e)
+    {
+        int result = QuorumAPI.QuorumAPI.AttachAPIWithState();
+        if (result == 1)
+        {
+            Console.WriteLine("Xeno attached successfully.");
+        }
+        else
+        {
+            Console.WriteLine("Attach failed.");
+        }
+    }
+
+    private void SetLevel_Click(object sender, EventArgs e)
+    {
+        QuorumAPI.QuorumAPI.SetLevel("5");
+    }
+
+    private void SetAttachNotify_Click(object sender, EventArgs e)
+    {
+        QuorumAPI.QuorumAPI.SetAttachNotify("Quorum Executor", "Successfully Attached!");
+    }
+}

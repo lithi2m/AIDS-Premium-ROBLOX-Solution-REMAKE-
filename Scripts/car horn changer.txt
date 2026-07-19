@@ -1,0 +1,7 @@
+local hai = getrenv()["_G"]
+
+for i,v in pairs(game.Workspace.Vehicles:GetChildren()) do
+if v.Name ~= "VehicleWreck" then
+hai.SoundIdSet(v.Essentials.Base.Horn, "rbxassetid://123456789")
+end
+end
